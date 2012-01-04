@@ -15,4 +15,4 @@ This is a complete implementation of the {Gravatar}[http://www.gravatar.com] ima
 
 
 
-That's it. No attribution required, but feel free to {leave a comment on my blog}http://www.fatlemon.co.uk/gravatar] if you find it useful
+That's it. No attribution required, but feel free to {leave a comment on my blog}[http://www.fatlemon.co.uk/gravatar] if you find it useful
