@@ -5,7 +5,7 @@ This is a complete implementation of the {Gravatar}[http://www.gravatar.com] ima
 
 == Getting Started
 
-1. Drop the single +GravatarHtmlHelper,cs+ into your ASP.Net MVC project
+1. Drop the single <tt>GravatarHtmlHelper.cs</tt> into your ASP.Net MVC project
 
 2. Start using it in your Views:
 
