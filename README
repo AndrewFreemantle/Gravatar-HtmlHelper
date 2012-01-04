@@ -1,0 +1,18 @@
+== Gravatar HtmlHelper for ASP.Net MVC
+
+This is a complete implementation of the {Gravatar}[http://www.gravatar.com] image request API, according the {Gravatar documentation}[http://en.gravatar.com/site/implement/images/], as an ASP.Net MVC HtmlHelper.
+
+
+== Getting Started
+
+1. Drop the single +GravatarHtmlHelper,cs+ into your ASP.Net MVC project
+
+2. Start using it in your Views:
+
+    @Html.GravatarImage("user.name@email.com")
+
+    @Html.GravatarImage("user.name@email.com", 32)
+
+
+
+That's it. No attribution required, but feel free to {leave a comment on my blog}http://www.fatlemon.co.uk/gravatar] if you find it useful
