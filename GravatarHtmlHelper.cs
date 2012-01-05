@@ -15,7 +15,7 @@ using System.Reflection;
 /// </summary>
 /// <remarks>
 /// This implementation by Andrew Freemantle - http://www.fatlemon.co.uk/
-/// <para>Source, Wiki and Issues: https://bitbucket.org/AndrewFreemantle/gravatar-htmlhelper </para>
+/// <para>Source, Wiki and Issues: https://github.com/AndrewFreemantle/Gravatar-HtmlHelper </para>
 /// </remarks>
 public static class GravatarHtmlHelper {
 
@@ -219,6 +219,7 @@ public static class GravatarHtmlHelper {
                 )
             );
 
+        imgTag.Attributes.Add("class", "gravatar");
         imgTag.Attributes.Add("alt", "Gravatar image");
         return new HtmlString(imgTag.ToString());
     }
