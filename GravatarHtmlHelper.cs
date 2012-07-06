@@ -207,11 +207,13 @@ public static class GravatarHtmlHelper {
     private static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage, string defaultImageUrl, bool forceDefaultImage, Rating rating, bool forceSecureRequest) {
         var imgTag = new TagBuilder("img");
 
+        emailAddress = String.IsNullOrEmpty(emailAddress) ? String.Empty : emailAddress.Trim().ToLower();
+
         imgTag.Attributes.Add("src",
             string.Format("{0}://{1}.gravatar.com/avatar/{2}?s={3}{4}{5}{6}",
                 htmlHelper.ViewContext.HttpContext.Request.IsSecureConnection || forceSecureRequest ? "https" : "http",
                 htmlHelper.ViewContext.HttpContext.Request.IsSecureConnection || forceSecureRequest ? "secure" : "www",
-                GetMd5Hash(emailAddress.Trim().ToLower()),
+                GetMd5Hash(emailAddress),
                 size.ToString(),
                 "&d=" + (!string.IsNullOrEmpty(defaultImageUrl) ? HttpUtility.UrlEncode(defaultImageUrl) : defaultImage.GetDescription()),
                 forceDefaultImage ? "&f=y" : "",
