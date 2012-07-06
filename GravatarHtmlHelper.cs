@@ -223,7 +223,7 @@ public static class GravatarHtmlHelper {
 
         imgTag.Attributes.Add("class", "gravatar");
         imgTag.Attributes.Add("alt", "Gravatar image");
-        return new HtmlString(imgTag.ToString());
+        return new HtmlString(imgTag.ToString(TagRenderMode.SelfClosing));
     }
 
 
