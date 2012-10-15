@@ -68,146 +68,28 @@ public static class GravatarHtmlHelper {
 
 
     /// <summary>
-    /// Returns a Globally Recognised Avatar as an 80 pixel &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress) {
-        return GravatarImage(htmlHelper, emailAddress, 80, DefaultImage.Default, string.Empty, false, Rating.G, false);
-    }
-
-    /// <summary>
     /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
     /// </summary>
     /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size) {
-        return GravatarImage(htmlHelper, emailAddress, size, DefaultImage.Default, string.Empty, false, Rating.G, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage) {
-        return GravatarImage(htmlHelper, emailAddress, size, defaultImage, string.Empty, false, Rating.G, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, string defaultImageUrl) {
-        return GravatarImage(htmlHelper, emailAddress, size, DefaultImage.Default, defaultImageUrl, false, Rating.G, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
-    /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage, bool forceDefaultImage) {
-        return GravatarImage(htmlHelper, emailAddress, size, defaultImage, string.Empty, forceDefaultImage, Rating.G, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
-    /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, string defaultImageUrl, bool forceDefaultImage) {
-        return GravatarImage(htmlHelper, emailAddress, size, DefaultImage.Default, defaultImageUrl, forceDefaultImage, Rating.G, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
-    /// <param name="rating">Gravatar content rating (note that Gravatars are self-rated)</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage, Rating rating) {
-        return GravatarImage(htmlHelper, emailAddress, size, defaultImage, string.Empty, false, rating, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
-    /// <param name="rating">Gravatar content rating (note that Gravatars are self-rated)</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, string defaultImageUrl, Rating rating) {
-        return GravatarImage(htmlHelper, emailAddress, size, DefaultImage.Default, defaultImageUrl, false, rating, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
-    /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
-    /// <param name="rating">Gravatar content rating (note that Gravatars are self-rated)</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage, bool forceDefaultImage, Rating rating) {
-        return GravatarImage(htmlHelper, emailAddress, size, defaultImage, string.Empty, forceDefaultImage, rating, false);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
-    /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
-    /// <param name="rating">Gravatar content rating (note that Gravatars are self-rated)</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, string defaultImageUrl, bool forceDefaultImage, Rating rating) {
-        return GravatarImage(htmlHelper, emailAddress, size, DefaultImage.Default, defaultImageUrl, forceDefaultImage, rating, false);
-    }
-
-
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
-    /// <param name="size">Size in pixels (default: 80)</param>
-    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
-    /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
-    /// <param name="rating">Gravatar content rating (note that Gravatars are self-rated)</param>
-    /// <param name="forceSecureRequest">Always do secure (https) requests</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage, bool forceDefaultImage, Rating rating, bool forceSecureRequest) {
-        return GravatarImage(htmlHelper, emailAddress, size, defaultImage, string.Empty, forceDefaultImage, rating, forceSecureRequest);
-    }
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    /// <param name="emailAddress">Email Address for the Gravatar</param>
+	/// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
     /// <param name="size">Size in pixels (default: 80)</param>
     /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
     /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
     /// <param name="rating">Gravatar content rating (note that Gravatars are self-rated)</param>
     /// <param name="forceSecureRequest">Always do secure (https) requests</param>
-    public static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, string defaultImageUrl, bool forceDefaultImage, Rating rating, bool forceSecureRequest) {
-        return GravatarImage(htmlHelper, emailAddress, size, DefaultImage.Default, defaultImageUrl, forceDefaultImage, rating, forceSecureRequest);
-    }
+    public static HtmlString GravatarImage(
+      this HtmlHelper htmlHelper,
+      string emailAddress,
+	  int size = 80,
+      DefaultImage defaultImage = DefaultImage.Default,
+      string defaultImageUrl = "",
+      bool forceDefaultImage = false,
+      Rating rating = Rating.G,
+      bool forceSecureRequest = false) {
 
-
-    /// <summary>
-    /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
-    /// </summary>
-    private static HtmlString GravatarImage(this HtmlHelper htmlHelper, string emailAddress, int size, DefaultImage defaultImage, string defaultImageUrl, bool forceDefaultImage, Rating rating, bool forceSecureRequest) {
         var imgTag = new TagBuilder("img");
 
-        emailAddress = String.IsNullOrEmpty(emailAddress) ? String.Empty : emailAddress.Trim().ToLower();
+        emailAddress = string.IsNullOrEmpty(emailAddress) ? string.Empty : emailAddress.Trim().ToLower();
 
         imgTag.Attributes.Add("src",
             string.Format("{0}://{1}.gravatar.com/avatar/{2}?s={3}{4}{5}{6}",
@@ -275,6 +157,5 @@ public static class GravatarHtmlHelper {
         return en.ToString();
 
     }
-
 
 }
