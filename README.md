@@ -18,11 +18,14 @@ This is a complete implementation of the [Gravatar](http://www.gravatar.com) ima
 
 1. Drop the `GravatarHtmlHelper.cs` file into your ASP.Net MVC project:
 
-	`GravatarHtmlHelper.cs`  
-	_for .Net 4.0+ / ASP.Net MVC 3.0+_
-
 	`GravatarHtmlHelper_Net35.cs`  
-	_for .Net 3.5 / ASP.Net MVC 2.0_
+	_for **.Net 3.5 / ASP.Net MVC 2.0**_
+
+	`GravatarHtmlHelper_Net40.cs`  
+	_for **.Net 4.0+ / ASP.Net MVC 3, 4, 5+**_
+
+	`GravatarHtmlHelper_NetCore.cs`  :new:  
+	_for **.Net Core / ASP.Net Core MVC**_
 
 
 2. Start using it in your Views:
