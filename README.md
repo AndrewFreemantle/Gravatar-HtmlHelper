@@ -16,19 +16,19 @@ This is a complete implementation of the [Gravatar](http://www.gravatar.com) ima
 
 ##Getting Started
 
-1. Drop the `GravatarHtmlHelper.cs` file into your ASP.Net MVC project:
-
-	`GravatarHtmlHelper_Net35.cs`  
-	_for **.Net 3.5 / ASP.Net MVC 2.0**_
-
-	`GravatarHtmlHelper_Net40.cs`  
-	_for **.Net 4.0+ / ASP.Net MVC 3, 4, 5+**_
+1. Drop the `GravatarHtmlHelper_{version}.cs` file anywhere in your ASP.Net MVC project:
 
 	`GravatarHtmlHelper_NetCore.cs`  :new:  
 	_for **.Net Core / ASP.Net Core MVC**_
 
+	`GravatarHtmlHelper_Net40.cs`  
+	_for **.Net 4.0+ / ASP.Net MVC 3, 4, 5+**_
 
-2. Start using it in your Views:
+	`GravatarHtmlHelper_Net35.cs`  
+	_for **.Net 3.5 / ASP.Net MVC 2.0**_
+
+
+2. Recompile and start using it in your Views:
 
     `@Html.GravatarImage("user.name@email.com")`
 
@@ -36,3 +36,7 @@ This is a complete implementation of the [Gravatar](http://www.gravatar.com) ima
 
 
 That's it. No attribution required, but feel free to [leave a comment on my blog](http://www.fatlemon.co.uk/gravatar) if you find it useful
+
+
+## Alternatives
+Mark Mailer has a [TagHelper implementation](https://github.com/ia2o/Gravatar-TagHelper) for ASP.Net Core MVC
