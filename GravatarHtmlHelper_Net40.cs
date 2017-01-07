@@ -19,7 +19,6 @@ using System.Reflection;
 /// </remarks>
 public static class GravatarHtmlHelper {
 
-
     /// <summary>
     /// In addition to allowing you to use your own image, Gravatar has a number of built in options which you can also use as defaults. Most of these work by taking the requested email hash and using it to generate a themed image that is unique to that email address
     /// </summary>
@@ -71,7 +70,7 @@ public static class GravatarHtmlHelper {
     /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
     /// </summary>
     /// <param name="emailAddress">Email Address for the Gravatar</param>
-	/// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
+    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
     /// <param name="size">Size in pixels (default: 80)</param>
     /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
     /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
@@ -80,12 +79,14 @@ public static class GravatarHtmlHelper {
     public static HtmlString GravatarImage(
       this HtmlHelper htmlHelper,
       string emailAddress,
-	  int size = 80,
+      int size = 80,
       DefaultImage defaultImage = DefaultImage.Default,
       string defaultImageUrl = "",
       bool forceDefaultImage = false,
       Rating rating = Rating.G,
-      bool forceSecureRequest = false) {
+      bool forceSecureRequest = false,
+      string cssClass = "gravatar",
+      string alt = "Gravatar image") {
 
         var imgTag = new TagBuilder("img");
 
@@ -103,8 +104,8 @@ public static class GravatarHtmlHelper {
                 )
             );
 
-        imgTag.Attributes.Add("class", "gravatar");
-        imgTag.Attributes.Add("alt", "Gravatar image");
+        imgTag.Attributes.Add("class", cssClass);
+        imgTag.Attributes.Add("alt", alt);
         return new HtmlString(imgTag.ToString(TagRenderMode.SelfClosing));
     }
 
@@ -133,7 +134,6 @@ public static class GravatarHtmlHelper {
         // Return the hexadecimal string.
         return sBuilder.ToString();
     }
-
 
 
     /// <summary>

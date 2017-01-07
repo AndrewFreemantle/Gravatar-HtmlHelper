@@ -14,13 +14,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 /// This implementation by Andrew Freemantle - http://www.fatlemon.co.uk/
 /// <para>Source, Wiki and Issues: https://github.com/AndrewFreemantle/Gravatar-HtmlHelper </para>
 /// </remarks>
-public static class GravatarHtmlHelper
-{
+public static class GravatarHtmlHelper {
+
     /// <summary>
     /// In addition to allowing you to use your own image, Gravatar has a number of built in options which you can also use as defaults. Most of these work by taking the requested email hash and using it to generate a themed image that is unique to that email address
     /// </summary>
-    public enum DefaultImage
-    {
+    public enum DefaultImage {
         /// <summary>Default Gravatar logo</summary>
         [DescriptionAttribute("")]
         Default,
@@ -48,8 +47,7 @@ public static class GravatarHtmlHelper
     /// <summary>
     /// Gravatar allows users to self-rate their images so that they can indicate if an image is appropriate for a certain audience. By default, only 'G' rated images are displayed unless you indicate that you would like to see higher ratings
     /// </summary>
-    public enum Rating
-    {
+    public enum Rating {
         /// <summary>Suitable for display on all websites with any audience type</summary>
         [DescriptionAttribute("g")]
         G,
@@ -69,7 +67,7 @@ public static class GravatarHtmlHelper
     /// Returns a Globally Recognised Avatar as an &lt;img /&gt; - http://gravatar.com
     /// </summary>
     /// <param name="emailAddress">Email Address for the Gravatar</param>
-	/// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
+    /// <param name="defaultImage">Default image if user hasn't created a Gravatar</param>
     /// <param name="size">Size in pixels (default: 80)</param>
     /// <param name="defaultImageUrl">URL to a custom default image (e.g: 'Url.Content("~/images/no-grvatar.png")' )</param>
     /// <param name="forceDefaultImage">Prefer the default image over the users own Gravatar</param>
@@ -83,8 +81,9 @@ public static class GravatarHtmlHelper
       string defaultImageUrl = "",
       bool forceDefaultImage = false,
       Rating rating = Rating.G,
-      bool forceSecureRequest = false)
-    {
+      bool forceSecureRequest = false,
+      string cssClass = "gravatar",
+      string alt = "Gravatar image") {
 
         var imgTag = new TagBuilder("img");
 
@@ -102,8 +101,8 @@ public static class GravatarHtmlHelper
                 )
             );
 
-        imgTag.Attributes.Add("class", "gravatar");
-        imgTag.Attributes.Add("alt", "Gravatar image");
+        imgTag.Attributes.Add("class", cssClass);
+        imgTag.Attributes.Add("alt", alt);
         imgTag.TagRenderMode = TagRenderMode.SelfClosing;
 
         return imgTag;
@@ -116,8 +115,7 @@ public static class GravatarHtmlHelper
     /// Generates an MD5 hash of the given string
     /// </summary>
     /// <remarks>Source: http://msdn.microsoft.com/en-us/library/system.security.cryptography.md5.aspx </remarks>
-    private static string GetMd5Hash(string input)
-    {
+    private static string GetMd5Hash(string input) {
 
         // Convert the input string to a byte array and compute the hash.
         byte[] data = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
@@ -145,8 +143,7 @@ public static class GravatarHtmlHelper
     /// <remarks>Source: http://blogs.msdn.com/b/abhinaba/archive/2005/10/21/483337.aspx </remarks>
     /// <param name="en"></param>
     /// <returns></returns>
-    private static string GetDescription(this Enum en)
-    {
+    private static string GetDescription(this Enum en) {
 
         Type type = en.GetType();
         MemberInfo[] memInfo = type.GetMember(en.ToString());

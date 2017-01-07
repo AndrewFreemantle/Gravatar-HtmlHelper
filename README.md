@@ -1,9 +1,9 @@
-#Gravatar HtmlHelper for ASP.Net MVC
+# Gravatar HtmlHelper for ASP.Net MVC
 
 This is a complete implementation of the [Gravatar](http://www.gravatar.com) image request API, according the [Gravatar documentation](http://en.gravatar.com/site/implement/images/), as an ASP.Net MVC HtmlHelper.
 
 
-##Features
+## Features
 
 * Size
 * Default image (404, mystery-man, identicon, monsterid, wavatar, retro)
@@ -12,9 +12,11 @@ This is a complete implementation of the [Gravatar](http://www.gravatar.com) ima
 * Ratings
 * Secure requests (HTTPS) is automatic (but can be forced)
 * Named and Optional Arguments for .Net 4.0 and above
+* Custom CSS `class` attribute string (`cssClass`)
+* Custom `alt` attribute string `alt`)
 
 
-##Getting Started
+## Getting Started
 
 1. Drop the `GravatarHtmlHelper_{version}.cs` file anywhere in your ASP.Net MVC project:
 
@@ -30,10 +32,18 @@ This is a complete implementation of the [Gravatar](http://www.gravatar.com) ima
 
 2. Recompile and start using it in your Views:
 
-    `@Html.GravatarImage("user.name@email.com")`
+```
+@Html.GravatarImage("user.name@email.com")
+```
 
-    `@Html.GravatarImage("user.name@email.com", size: 32, defaultImage: GravatarHtmlHelper.DefaultImage.Identicon, rating: GravatarHtmlHelper.Rating.PG)`
-
+```
+@Html.GravatarImage(
+  "user.name@email.com",
+  size: 32,
+  defaultImage: GravatarHtmlHelper.DefaultImage.Identicon,
+  rating: GravatarHtmlHelper.Rating.PG,
+  cssClass: "gravatar img-responsive")
+```
 
 That's it. No attribution required, but feel free to [leave a comment on my blog](http://www.fatlemon.co.uk/gravatar) if you find it useful
 
